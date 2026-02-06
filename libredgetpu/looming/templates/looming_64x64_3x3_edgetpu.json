@@ -1,0 +1,10 @@
+{
+  "height": 64,
+  "width": 64,
+  "zones": 3,
+  "input_scale": 1.0,
+  "input_zero_point": 0,
+  "output_scale": 71.63357543945312,
+  "output_zero_point": 0,
+  "output_count": 9
+}

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+tests/models/
+tests/results/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiler logs (dev-time output)
+*.log
+
+# Firmware binary (auto-downloaded on first use)
+libredgetpu/apex_latest_single_ep.bin
+
+# Coverage reports
+coverage.xml
+
+# Experiments (dev-time output)
+experiments/*.json

@@ -1,0 +1,13 @@
+{
+  "height": 64,
+  "width": 64,
+  "channels": 1,
+  "input_scale": 1.0,
+  "input_zero_point": 0,
+  "output_scale": 0.10768752545118332,
+  "output_zero_point": -47,
+  "output_count": 2,
+  "variant": "bright",
+  "temperature": 0.1,
+  "y_offset": 10.0
+}

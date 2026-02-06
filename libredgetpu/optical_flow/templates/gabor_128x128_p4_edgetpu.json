@@ -1,0 +1,18 @@
+{
+  "height": 128,
+  "width": 128,
+  "ksize": 7,
+  "orientations": 4,
+  "sigmas": [
+    1.5,
+    3.0
+  ],
+  "num_filters": 8,
+  "input_scale": 0.00392156862745098,
+  "input_zero_point": 0,
+  "output_scale": 0.002269569245020843,
+  "output_zero_point": 0,
+  "output_count": 8192,
+  "gabor_weight_scale": 0.007874015748031496,
+  "fused_pool": 4
+}

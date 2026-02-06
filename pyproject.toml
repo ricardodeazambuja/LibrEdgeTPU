@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "libredgetpu"
+version = "0.1.0"
+description = "Pure-Python Edge TPU inference engine — no libedgetpu required"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Ricardo de Azambuja", email = "ricardo.azambuja@gmail.com"},
+]
+keywords = ["edgetpu", "coral", "tpu", "inference", "machine-learning", "edge-computing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+]
+dependencies = [
+    "pyusb>=1.2.0",
+    "numpy>=1.21.0",
+    "flatbuffers>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "pytest-timeout"]
+postprocess = ["Pillow"]
+multipose = ["scipy"]
+gui = ["flask>=2.0.0", "opencv-python>=4.5.0"]
+
+[project.urls]
+Homepage = "https://github.com/ricardodeazambuja/LibrEdgeTPU"
+Repository = "https://github.com/ricardodeazambuja/LibrEdgeTPU"
+Issues = "https://github.com/ricardodeazambuja/LibrEdgeTPU/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["libredgetpu*"]
+exclude = ["tests", "tests.*", "experiments", "experiments.*", "docs", "docs.*"]
+
+[tool.setuptools.package-data]
+libredgetpu = [
+    "py.typed",
+    "templates/*.tflite",
+    "templates/*.json",
+    "looming/templates/*.tflite",
+    "looming/templates/*.json",
+    "tracker/templates/*.tflite",
+    "tracker/templates/*.json",
+    "pattern/templates/*.tflite",
+    "pattern/templates/*.json",
+    "optical_flow/templates/*.tflite",
+    "optical_flow/templates/*.json",
+    "gui/templates/*.html",
+    "gui/static/*.css",
+    "gui/static/*.js",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+timeout = 300
+addopts = "--strict-markers"
+markers = [
+    "hardware: requires USB Edge TPU device",
+    "validated: hardware + post-processing validation",
+]
